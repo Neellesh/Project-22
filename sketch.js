@@ -6,17 +6,19 @@ const Constraint = Matter.Constraint;
 
 var roof;
 var bob1 , bob2 , bob3 , bob4 , bob5 ;
-var con1 , con2 , con3 , con4 , con5 , 
+var con1 , con2 , con3 , con4 , con5 ; 
 
 
 function setup () {
 	createCanvas(800, 600);
 	rectMode(CENTER);
 	ellipseMode(RADIUS);
-	Engine.run(engine);
+	
 
 	engine = Engine.create();
 	world = engine.world;
+	
+	Engine.run(engine);
 
 	var roof_options={
 		isStatic:true			
@@ -119,9 +121,9 @@ function draw() {
 
   line(con3.pointA.x,con3.pointA.y,bob2.position.x,bob2.position.y);
 
-  line(con4.pointA.x,con4.pointA.y,bob1.position.x,bob4.position.y);
+  line(con4.pointA.x,con4.pointA.y,bob4.position.x,bob4.position.y);
   
-  line(con5.pointA.x,con5.pointA.y,bob1.position.x,bob5.position.y);
+  line(con5.pointA.x,con5.pointA.y,bob5.position.x,bob5.position.y);
   
   pop();
 
@@ -139,7 +141,7 @@ function keyPressed()
 {
   if(keyCode==UP_ARROW)
     {
-      Matter.Body.applyForce(bob1,{x:0,y:0},{x:-0.05,y:-3});
+      Matter.Body.applyForce(bob1,{x:0,y:0},{x:-0.06,y:-0.03});
     }
 }
 
